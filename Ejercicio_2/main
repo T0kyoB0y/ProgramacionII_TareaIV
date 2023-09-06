@@ -39,7 +39,7 @@ class SistemaDeReservas:
                     print(Fore.LIGHTCYAN_EX + "N ", end="")
                 else:
                     print(Fore.LIGHTBLUE_EX + "R ", end="")
-            print("\n")
+            print("")
         return ""
 
 if __name__ == "__main__":
