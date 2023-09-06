@@ -50,7 +50,7 @@ class Matriz:
             return temp1
             
     def multiplicar(self, otra):
-        return []
+        return [[0], [0]]
 
 
 
@@ -70,10 +70,10 @@ if __name__ == "__main__":
     matriz2 = Matriz(5, 5, True)
     
     print("Matriz 1:")
-    imprimir(matriz1)
+    imprimir(matriz1.matriz)
     
     print("Matriz 2:")
-    imprimir(matriz2)
+    imprimir(matriz2.matriz)
     
     suma = matriz1.sumar(matriz2)
     print("Resultado de la suma:")
