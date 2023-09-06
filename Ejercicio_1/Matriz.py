@@ -9,7 +9,12 @@ class Matriz:
         self.matriz = []
 
 
-    def 
+    def AddElement(self):
+        for fila in range(0,self.filas):
+            for columna in range(0,self.columnas):
+                self.matriz[i].append(fila + columna)
+        
+        print(self.matriz)
     def imprimir(self):
         for fila in range(0,self.filas):
             for columna in range(0,self.columnas):
