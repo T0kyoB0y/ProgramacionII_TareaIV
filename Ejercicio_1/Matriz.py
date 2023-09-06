@@ -28,12 +28,6 @@ class Matriz:
                 temp1.append(temp2)            
             self.matriz = temp1
             
-    def imprimir(self):
-        for i in range(len(self.matriz)):
-            temp = self.matriz[i]
-            print(f"{temp}", end="")
-
-            print("")
 
     def sumar(self, otra):
             temp1 = []
@@ -58,7 +52,12 @@ class Matriz:
 
 
 
-
+def imprimir(matriz):
+    for i in range(len(matriz)):
+        temp = matriz[i]
+        print(f"{temp}", end="")
+        print("")
+        
 import random
 if __name__ == "__main__":
 
@@ -68,15 +67,16 @@ if __name__ == "__main__":
     matriz2 = Matriz(5, 5, True)
     
     print("Matriz 1:")
-    matriz1.imprimir()
+    imprimir(matriz2.matriz)
     
     print("Matriz 2:")
-    matriz2.imprimir()
+    imprimir(matriz1.matriz)
     print("Resultado de la suma:")
-    suma = matriz1.restar(matriz2)
+    suma = matriz1.sumar(matriz2)
 
-    print(suma, end="")
-
+    imprimir(suma)    
+    
+    
     #resta = matriz1.restar(matriz2)
     #print("Resultado de la resta:")
     #resta.imprimir()
