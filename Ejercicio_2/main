@@ -1,0 +1,58 @@
+#!/usr/bin/env python
+
+from colorama import Fore, init
+
+init(autoreset=True)
+
+class SistemaDeReservas:
+    def __init__(self, filas, columnas):
+        self.filas = filas
+        self.columnas = columnas
+        self.asientos_reservados = []
+    def reservar_asiento(self, fila, columna):
+        if (fila, columna) not in self.asientos_reservados:
+            self.asientos_reservados.append((fila, columna))
+            return True
+        else:
+            return False
+    
+    def cancelar_reserva(self, fila, columna):
+        if (fila, columna) in self.asientos_reservados:
+            self.asientos_reservados.remove((fila, columna))            
+            return True
+        else:
+            return False
+    def asientos_disponibles(self):
+        temp = 0
+        for i in range(self.filas):
+            for j in range(self.columnas):
+                if (i, j) not in self.asientos_reservados:
+                    temp += 1
+                else:
+                    continue
+        return temp
+    
+    def __str__(self):
+        for i in range(self.filas):
+            for j in range(self.columnas):
+                if (i, j) not in self.asientos_reservados:
+                    print(Fore.LIGHTCYAN_EX + "N ", end="")
+                else:
+                    print(Fore.LIGHTBLUE_EX + "R ", end="")
+            print("\n")
+        return ""
+
+if __name__ == "__main__":
+    cine = SistemaDeReservas(3, 7)
+    print("Estado inicial del cine:")
+    print(cine)
+    resultado1 = cine.reservar_asiento(2, 3)
+    print("Reserva exitosa:", resultado1)
+    print("Estado del cine después de la reserva:")
+    print(cine)
+    resultado2 = cine.cancelar_reserva(2, 3)
+    print("Cancelación exitosa:", resultado2)
+    print("Estado del cine después de la cancelación:")
+    print(cine)
+    disponibles = cine.asientos_disponibles()
+    print("Asientos disponibles:", disponibles)
