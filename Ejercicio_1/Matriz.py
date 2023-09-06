@@ -30,6 +30,7 @@ class Matriz:
             
 
     def sumar(self, otra):
+       if self.filas == otra.filas and self.columnas == otra.columnas:
             temp1 = []
             for i in range(0, self.filas):
                 temp2 = []
@@ -37,8 +38,9 @@ class Matriz:
                     temp2.append((self.matriz[i][j] + otra.matriz[i][j]))
                 temp1.append(temp2)
             return temp1
-    
+        
     def restar(self, otra):
+       if self.filas == otra.filas and self.columnas == otra.columnas:
             temp1 = []
             for i in range(0, self.filas):
                 temp2 = []
