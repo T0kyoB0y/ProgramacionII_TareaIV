@@ -50,7 +50,7 @@ class Matriz:
             return temp1
             
     def multiplicar(self, otra):
-        nueva_matriz = []
+        return []
 
 
 
@@ -62,26 +62,27 @@ def imprimir(matriz):
         
 import random
 if __name__ == "__main__":
-
+    
     random.seed(7)
     matriz1 = Matriz(5, 5, True)
+    
     random.seed(8)
     matriz2 = Matriz(5, 5, True)
     
     print("Matriz 1:")
-    imprimir(matriz2.matriz)
+    imprimir(matriz1)
     
     print("Matriz 2:")
-    imprimir(matriz1.matriz)
-    print("Resultado de la suma:")
+    imprimir(matriz2)
+    
     suma = matriz1.sumar(matriz2)
-
-    imprimir(suma)    
+    print("Resultado de la suma:")
+    imprimir(suma)
     
+    resta = matriz1.restar(matriz2)
+    print("Resultado de la resta:")
+    imprimir(resta)
     
-    #resta = matriz1.restar(matriz2)
-    #print("Resultado de la resta:")
-    #resta.imprimir()
-    #multiplicacion = matriz1.multiplicar(matriz2)
-    #print("Resultado de la multiplicación:")
-    #multiplicacion.imprimir()
+    print("Resultado de la multiplicación:")
+    multiplicacion = matriz1.multiplicar(matriz2)
+    imprimir(multiplicacion)
